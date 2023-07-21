@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
 /*
@@ -32,6 +33,26 @@ int GCD(int A, int B) // The time complexity of Euclid’s Algorithm is O(log(ma
         return A;
     else
         return GCD(B, A % B);
+}
+
+/*
+ * a good way to calc Combinations
+ */
+
+ll comp(ll n, ll r) // 7C5 ---> 7C2
+{
+    if (n - r < r)
+        r = n - r;
+
+    ll res = 1;
+    for (int i = 1; i <= r; i++)
+    {
+        res *= n;
+        n--;
+        res /= i;
+    }
+
+    return res;
 }
 
 int main()
