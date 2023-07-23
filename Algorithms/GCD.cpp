@@ -36,6 +36,15 @@ int GCD(int A, int B) // The time complexity of Euclid’s Algorithm is O(log(ma
 }
 
 /*
+ * Algorithm to calcualte the Least Common Multiple
+ */
+
+int LCM(ll A, ll B)
+{
+    return (A * B) / gcd(A, B);
+}
+
+/*
  * a good way to calc Combinations
  */
 
