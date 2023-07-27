@@ -7,6 +7,8 @@ using namespace std;
  *
  * We can traverse over all the numbers from min(A, B) to 1
  * and check if the current number divides both A and B or not. If it does, then it will be the GCD of A and B.
+ *
+ * This one is not the best
  */
 
 int GCD1(int A, int B) // Time complexity of this function is O(min(A, B))
@@ -39,7 +41,7 @@ int GCD(int A, int B) // The time complexity of Euclid’s Algorithm is O(log(ma
  * Algorithm to calcualte the Least Common Multiple
  */
 
-int LCM(ll A, ll B)
+ll LCM(ll A, ll B)
 {
     return (A * B) / gcd(A, B);
 }
