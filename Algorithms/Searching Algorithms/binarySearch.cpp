@@ -2,7 +2,7 @@
 using namespace std;
 
 // An iterative binary search function.
-int binarySearch(int arr[], int l, int r, int n)
+int binarySearch(int arr[], int l, int r, int key)
 {
     while (l <= r)
     {
@@ -11,11 +11,11 @@ int binarySearch(int arr[], int l, int r, int n)
         int m = l + (r - l) / 2;
 
         // Check if n is present at mid
-        if (arr[m] == n)
+        if (arr[m] == key)
             return m; // returing the index
 
         // If n greater, ignore left half
-        if (arr[m] < n)
+        if (arr[m] < key)
             l = m + 1;
 
         // If n is smaller, ignore right half
@@ -30,24 +30,24 @@ int binarySearch(int arr[], int l, int r, int n)
 // A recursive binary search function. It returns
 // location of x in given array arr[l..r] is present,
 // otherwise -1
-int binarySearchRecursive(int arr[], int l, int r, int n)
+int binarySearchRecursive(int arr[], int l, int r, int key)
 {
     if (l <= r)
     {
         int m = l + (r - l) / 2;
 
-        if (arr[m] == n)
+        if (arr[m] == key)
             return m;
 
         // If element is smaller than mid, then
         // it can only be present in left subarray
-        if (arr[m] > n)
-            return binarySearchRecursive(arr, l, m - 1, n);
+        if (arr[m] > key)
+            return binarySearchRecursive(arr, l, m - 1, key);
 
         // Else the element can only be present
         // in right subarray
         else
-            return binarySearchRecursive(arr, m + 1, r, n);
+            return binarySearchRecursive(arr, m + 1, r, key);
     }
 
     return -1;
